@@ -1,28 +1,30 @@
 import React, {useState} from 'react'
+import { AddCategory } from './components/AddCategory';
+import { GifGrid } from './components/GifGrid';
 import './index.css'
 
 const GiftExpertApp = () => {
 
-    const api_key = 'mL9uPpnCLyFzRM088aWh28GzW2v9pOqw';
-    const [categories, setCategories] = useState(['One Punch', 'Samurai x', 'Dragon Ball']);
+    
+    const [categories, setCategories] = useState(['One Punch']);
 
-    const handleAdd = () =>{
-        setCategories([...categories, 'Hunter']); //Una manera
-        setCategories(cast => [...categories, 'Hunter']); //Otra manera
-    }
 
     return(
         <div>
             <h2>Meme app</h2>
+            <AddCategory setCategories ={setCategories}/>
             <hr/>
 
-            <button onClick={handleAdd}>Add</button>
 
             <ol>
                 {
-                    categories.map(item =>{
-                        return <li key={item}>{item}</li>
-                    })
+                    categories.map(category => (
+                        <GifGrid 
+                            key={category}
+                            category={category}
+                            />
+                        // return <li key={category}>{category}</li>
+                    ))
                 }
             </ol>
         </div>
