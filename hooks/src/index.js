@@ -1,6 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
+import { MultipleCustomerHooks } from './components/examples/MultipleCustomerHooks';
+import { MemoHook } from './components/memos/MemoHook';
+import { Memorize } from './components/memos/Memorize';
+import { FormWinthCustomerHook } from './components/useEffect/FormWithCustomerHook';
 import { SimpleForm } from './components/useEffect/SimpleForm';
+import { Layout } from './components/useLayoutEffect/Layout';
+import { FocusScreen } from './components/useRef/FocusScreen';
+import { RealExampleRef } from './components/useRef/RealExampleRef';
 import { CounterApp } from './components/useState/CounterApp';
 import { CounterWithCustomerHook } from './components/useState/CounterWithCustomerHook';
 import { HookApp } from './HookApp';
@@ -10,7 +17,14 @@ ReactDOM.render(
     {/* <HookApp></HookApp> */}
     {/* <CounterApp/> */}
     {/* <CounterWithCustomerHook/> */}
-    <SimpleForm/>
+    {/* <SimpleForm/> */}
+    {/* <FormWinthCustomerHook/> */}
+    {/* <MultipleCustomerHooks/> */}
+    {/* <FocusScreen/> */}
+    {/* <RealExampleRef/> */}
+    {/* <Layout/> */}
+    {/* <Memorize/> */}
+    <MemoHook/>
   </React.StrictMode>,
   document.getElementById('root')
 );
