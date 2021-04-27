@@ -5,7 +5,7 @@ export const NavBar = () => {
     return (
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
             <div className="container-fluid">
-                <NavLink exact activeClassName="active" to="/" class="navbar-brand">useContext</NavLink>
+                <NavLink activeClassName="active" to="/" className="navbar-brand">useContext</NavLink>
                 
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div className="navbar-nav">
