@@ -14,6 +14,7 @@ import { CounterApp } from './components/useState/CounterApp';
 import { CounterWithCustomerHook } from './components/useState/CounterWithCustomerHook';
 import { HookApp } from './HookApp';
 import { TodoApp } from './components/useReducer/TodoApp';
+import { MainApp } from './components/useContext/MainApp';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -30,7 +31,8 @@ ReactDOM.render(
     {/* <MemoHook/> */}
     {/* <CallbackHook/> */}
     {/* <Padre/> */}
-    <TodoApp/>
+    {/* <TodoApp/> */}
+    <MainApp/>
   </React.StrictMode>,
   document.getElementById('root')
 );
