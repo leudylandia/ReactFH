@@ -1,9 +1,10 @@
 import React from 'react'
+import { HeroList } from '../heroes/HeroList'
 
 export const DcScreen = () => {
     return (
-        <div>
-            <h1>Dc Screen</h1>
+        <div className="container mt-2">
+            <HeroList publisher={'DC Comics'}/>
         </div>
     )
 }
