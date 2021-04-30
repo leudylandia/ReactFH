@@ -1,14 +1,40 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { heroes } from '../../data/heroes'
+import { useInputForm } from '../../hooks/useInputForm';
 import { HeroCard } from '../heroes/HeroCard';
+import { queryString } from 'query-string'
+import { useLocation } from 'react-router';
+import { getHeroByName } from '../../selectors/getHeroByName';
 
-export const SearchScreen = () => {
+export const SearchScreen = ({history}) => {
 
-    const heroesFiltered = heroes;
+    const location = useLocation();
+    //const { q = '' } = queryString.parse(location.search);
 
-    const handleSubmit = () =>{
-        
+    
+
+    const initialForm = {
+        search: ''
     }
+    //Customer Hooks
+    const [formValue, handleInputChange, reset] = useInputForm(initialForm);
+
+    const {search} = formValue;
+
+    // const heroesFiltered = heroes; //Data
+     const heroesFiltered = getHeroByName(search);
+
+    //const heroesFiltered = useMemo(() => getHeroByName(q), [q])
+
+    const handleSubmit = (e) =>{
+        e.preventDefault();
+
+        history.push(`?q=${search}`)
+
+        reset();
+    }
+
+    // console.log(search)
 
     return (
         <div>
@@ -18,11 +44,14 @@ export const SearchScreen = () => {
             <div className="row">
                 <div className="col-5">
                     <h4>Search</h4>
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <input
                             className="form-control"
                             type="text"
                             placeholder="Find your hero"
+                            name='search'
+                            value={search}
+                            onChange={handleInputChange}
                         />
 
                         <button
