@@ -2,9 +2,8 @@ import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 export const HeroCard = ({id, superhero, publisher, alter_ego, first_appearance, characters }) => {
-    
+  
     // const {id, superhero, publisher, alter_ego, first_appearance } = hero;
-    // console.log(hero)
     
     return (
         <>

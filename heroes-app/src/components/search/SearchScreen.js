@@ -6,13 +6,17 @@ export const SearchScreen = () => {
 
     const heroesFiltered = heroes;
 
+    const handleSubmit = () =>{
+        
+    }
+
     return (
         <div>
             <h1>Search Screen</h1>
             <hr/>
 
             <div className="row">
-                <div class="col-5">
+                <div className="col-5">
                     <h4>Search</h4>
                     <form>
                         <input
@@ -23,12 +27,13 @@ export const SearchScreen = () => {
 
                         <button
                             type="submit"
-                            className="btn m-1 btn-block btn-outline-primary">
+                                className="btn m-1 btn-block btn-outline-primary"
+                                onClick={handleSubmit}>
                                 Search...
                             </button>
                     </form>
                 </div>
-                <div class="col-7">
+                <div className="col-7">
                     <h4>Results</h4>
                     <hr/>
                      {/* DEBO PONER UN ENLACE EN LA BARRA DEL MENU PARA LLEGAR A ESTE COMPONENTE
@@ -36,9 +41,11 @@ export const SearchScreen = () => {
                          SI QUIERO PUEDO USAR EL CUSTOM HOOK, LO HARE ASI PARA APRENDER*/}
                     {
                         heroesFiltered.map(hero => (
+                           
                             <HeroCard 
                                 key={hero.id}
-                                hero={hero}
+                                // hero={hero} asi no funciona
+                                {...hero}
                             />
                         ))
                     }
