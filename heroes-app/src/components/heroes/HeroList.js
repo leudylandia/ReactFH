@@ -1,17 +1,19 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { getHeroesByPublisher } from '../../selectors/getHeroesByPublisher'
 import { HeroCard } from './HeroCard';
 
 export const HeroList = ({publisher}) => {
 
-    const heroe = getHeroesByPublisher(publisher);
+    //Para que no se vuela a llamar solo en caso cuando el publisher cambie
+    const heroe = useMemo(() => getHeroesByPublisher(publisher), [publisher])
+    //const heroe = getHeroesByPublisher(publisher);
     
     return (
-        <div className="card-columns">
-            {
+        <div className="row animate__animated animate__flipInX">
+          {
                 heroe.map(hero => (
                     //console.log(hero)
-                    <HeroCard 
+                    <HeroCard className=""
                         key={hero.id}
                         {...hero}
                     />
