@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Qoute } from "./components/Qoute";
+import { QuotePrueba } from "./components/QuotePrueba";
 
 const InitialValues = {
   quote: 'No Qoute',
@@ -13,12 +15,17 @@ function App() {
       const url = "http://quotes.stormconsultancy.co.uk/random.json";
       const res = await fetch(url);
       const data = await res.json();
-      console.log(data)
+      //console.log(data);
+      setPhrase(data);
   }
 
   useEffect(() => {
-    
-  }, [input])
+    getQoute();
+  }, [])
+
+  const handleNext = (e) =>{
+    getQoute();
+  }
 
 
 
@@ -28,16 +35,11 @@ function App() {
         src="https://upload.wikimedia.org/wikipedia/commons/3/33/Autoquotes.png"
         alt="logo"
       />
-     <button>Get next</button>
-     <blockquote>
-       <p>
-         {phrase.quote}
-         <br/>
-         <span>- {phrase.author}</span>
-       </p>
-       
-
-     </blockquote>
+     <button onClick={(e) => handleNext(e)}>Get next</button>
+    
+     <Qoute quote={phrase}/>
+     <hr/>
+     <QuotePrueba/>
     </div>
   );
 }
