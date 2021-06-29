@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Qoute } from "./components/Qoute";
 import { QuotePrueba } from "./components/QuotePrueba";
+import {QuotePasarInfo} from "./components/QuotePasarInfo"
 
 const InitialValues = {
   quote: 'No Qoute',
@@ -40,6 +41,9 @@ function App() {
      <Qoute quote={phrase}/>
      <hr/>
      <QuotePrueba/>
+     <hr/>
+     <br/>
+     <QuotePasarInfo quote={phrase} handleNext={handleNext}/>
     </div>
   );
 }
