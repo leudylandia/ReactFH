@@ -1,0 +1,11 @@
+1. Crear componentes Card y Select
+2. Llamar componentes desde app
+3. Poner una img de prueba en el card <img><p>
+4. entrar al link para compiar el index.css
+5. crear el estado breeds initialBreads(id,name) Select components
+6. Mostramos los breead en la pantalla los iniciales
+7. Cargar informacion en la primera carga del componentes (Select)
+8. Crear un archivo helpers/getBreedas para ontener los breeds y retornarla , recordar exportarla (https://api.thedogapi.com/v1/breeds), id y name
+9. En nuestro componente select creamos una funcion par aactualizar lo breeds (updateBreeds), osea llamar a los breeds nuevamente
+10. luego esa funcion la llamamos en el efecto
+
