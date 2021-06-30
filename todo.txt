@@ -8,4 +8,31 @@
 8. Crear un archivo helpers/getBreedas para ontener los breeds y retornarla , recordar exportarla (https://api.thedogapi.com/v1/breeds), id y name
 9. En nuestro componente select creamos una funcion par aactualizar lo breeds (updateBreeds), osea llamar a los breeds nuevamente
 10. luego esa funcion la llamamos en el efecto
+---------------------DONE 1-10---------------------
+11. Colocar el evento Onchange al select e imprimir una alerta con msj
+12. Cada vez que hagamos el onchange vamos a cambiar la imagen para eso debemos parar informacion al Card, Nos vamos al nivel mas alto que es App.
+13. Crear estado dog en app e inicialdog(image:urlImage, y un objeto de raza(id:"1", name=Labrador).
+14. Mandamos la informacion a la Card.
+15. Recibir la informacion en card por medio de props
+16. Reemplazar la url de la imagen por la recibida en la props. ante de usar esa url en el valor initial a modo de ejemplo. y completar lo demas variables.
+17. Imprimir el name, Probar que todo funcione.
+18. Creamos otro helpers getDog para obtener las informacion. usar la aleatoria por el momento(https://api.thedogapi.com/v1/images/search).
+19. En app hacemos una funcion (updateDog) y llamamos a la api getDog y asignar las infomacion recibida al estado ya creado (dog) ver lo que imprime por consola. 
+20. en el helper get dog tratar de formatear el objeto y asinar al estado en el app.
+---------------------DONE 11-20---------------------
+21. Corregir el inconveniente cuando las razas vienen vacia, poner unas razas random por defecto.
+22. Al editar los valores del objeto devemos quitar el const y convertirlo en variables let para asi editarlo.
+23. Es momento cuando seleccione el select  cambie, le mandamos la funcion update al componente select.
+24. Recibimos la funcion en los props. Luego llamar dicha funcion en el evento onchange.
+25. Probar que haga el cambio.
+26. Una vez que todo funcione, ahora vamos a recibir la raza elegida, primero debemos recibir el breedId getDog
+27. Si el breedId === 0 que traiga un dog aleatorio de lo contrario traer el que se pide (https://api.thedogapi.com/v1/images/search?breed_ids=)
+28. Enviar el parametro breedid al helper getDog.
+29. En el useEffect enviar un id para el error underfind. O hacer validacion en la api si el breedId es underfind
+
+
+
+
+ 
+
 
