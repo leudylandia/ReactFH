@@ -17,8 +17,6 @@ const Card = ({dog, updateDog, loading}) => {
                 <img src={dog.image}></img>
                 <p>{dog.breed.name}</p>
             </div>
-
-            
         </>
     )
 }

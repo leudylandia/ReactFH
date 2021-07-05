@@ -54,9 +54,11 @@
 50. Mandamos un msj bonito al usuario.
 51 Creamos un nuevo componete Error para mostrar los errores class=error
 52. Si el error existe imprimirlo en el select
-
-Que de en 57
-
+---------------------DONE 44-52---------------------
+45. Hacer el catch para cuando vaya a realizar la peticion de un dog (parecido al de breeds)
+46. Capturar el error y mandar al usuario un msj mas descriptiovo usar el componente creado
+47. Ocultar el lodading si falla 
+48. Agregar a nimacion a card clase bounce
 
 
 
