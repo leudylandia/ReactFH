@@ -1,0 +1,68 @@
+$('#sendEmail').click(function () {
+                            swal.queue([{
+                                title: 'Alerta',
+                                text: 'Se enviara un email que contiene el codigo para activarlo! Desea continuar?',
+                                type: 'warning',
+                                showCancelButton: true,
+                                confirmButtonColor: '#3085d6',
+                                cancelButtonColor: '#d33',
+                                confirmButtonText: 'Si',
+                                cancelButtonText: 'No',
+                                showLoaderOnConfirm: true,
+                                preConfirm: function () {
+                                    return new Promise(function (resolve) {
+                                        queue.ExecuteRequest({
+                                            url: "@HttpRuntime.AppDomainAppVirtualPath.ToMyPath()/usuarios/EnviarCorreo2FA",
+                                            method: "post",
+                                            data: { },
+                                            success: function (data) {
+                                                if (data.toLowerCase() == 'true') {
+                                                    swal('Hecho', 'Se ha enviado el codigo a su email', 'success');
+                                                  }
+                                                else
+                                                    swal('Error', 'No se pudo enviar el codigo Intente de nuevo!!', 'error');
+                                            },
+                                            error: function(){
+                                                swal('Error', 'Ha ocurrido un problema al enviar el correo', 'error');
+                                            }
+                                        });
+                                    })
+
+                                }
+                            }]);
+    });
+**************************************************
+@if (TempData["msjAviso"] != null)
+{
+    <script>
+        window.addEventListener("load", function () {
+            swal('Aviso', '@MvcHtmlString.Create(TempData["msjAviso"].ToString())', 'info');
+        });
+    </script>
+}
+*************************************************
+@if (ViewBag.msjError != null)
+{
+    <script>
+        swal(
+            'Error',
+            '@ViewBag.msjError',
+            'error'
+            );
+    </script>
+}
+************************************************
+  <label class="control-label">Estado</label>
+                                @Html.DropDownList("usuarioEstatus", new List<SelectListItem>
+                                            {
+                                                new SelectListItem{ Text="Pendiente", Value = "2" },
+                                                new SelectListItem{ Text="Migración", Value = "3" },
+                                                new SelectListItem{ Text="Inhabilitado", Value = "4" }
+                                            }, htmlAttributes: new { @class = "selectpicker", data_style = "btn-default", data_max_options = "3", data_live_search = "true" })
+************************************************
+@if (TempData["msjAvisoQR"] != null)
+{
+    <script>
+        swal('Aviso', '@TempData["msjAvisoQR"]', 'success');
+    </script>
+}
