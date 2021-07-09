@@ -1,14 +1,23 @@
-
 import React from 'react'
+import { Spinner } from './Spinner'
 
-const Card = ({dog}) => {
+const Card = ({dog, updateDog, loading}) => {
 
-    console.log(dog, "card")
+    // const prueba = (nume) =>{
+    //     console.log(dog, "card", nume)
+    //     alert(nume);
+    // }
+
+    if(loading)
+        return <Spinner/>
+        
     return (
-        <div className="card">
-            <img src={dog.image}></img>
-            <p>{dog.breed.name}</p>
-        </div>
+        <>
+            <div className="card" onClick={() => updateDog(dog.breed.id)}>
+                <img src={dog.image}></img>
+                <p>{dog.breed.name}</p>
+            </div>
+        </>
     )
 }
 

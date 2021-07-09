@@ -29,7 +29,36 @@
 27. Si el breedId === 0 que traiga un dog aleatorio de lo contrario traer el que se pide (https://api.thedogapi.com/v1/images/search?breed_ids=)
 28. Enviar el parametro breedid al helper getDog.
 29. En el useEffect enviar un id para el error underfind. O hacer validacion en la api si el breedId es underfind
-
+---------------------DONE 21-29---------------------
+30. Mandarle la funcion al card para cuando le de clic cambiar la imagen updateDog
+31. Recibir en card la funcion por props
+32. Crear un evento en la card para cuando se le de clic llamar a la funcion en dico evento.
+33. A la funcion le vamos a enviar el id de la raza del perro, ver en consola el objeto para saber que mandar en al funcion id de la raza.
+34. Probar que todo funcione
+35. Ahora vamos a poner un loading en el App mientras se carga el card, crear estado loading = false.
+36. Si loading es true mostrarlo de lo contrario mostrar el card.
+37. AHora otra forma de hacerlo tambien es mandando el loading al componente y alla hacer la condicion la condicion se puso ante del jsx(return). Como mejor guste.
+38. Vamos a poner un spinner en vez de loading (https://loading.io/css) tomar el que mas guste.
+39. Crear un componente Spinner. y en el componente pegamos el codigo html
+40. Luego agregamos el css Spinner.css e importamos la hoja de estilo en el componente
+41. Ahora usar dicho componente. Le cambiaremos el color ya que viene en blanco
+42. Cambiar el color a otro color diferente del blanco (#666)
+43. Probar todo
+---------------------DONE 30-43---------------------
+44. Vamos a manejar los errores
+45. En el select creamos un estado error =null
+46. Nos vamos a la funcion getBreeds que llama la api
+47. ahi en el response vamos a usar el atributo Ok, revisar en clg()
+48. si !ok lanzar un throw Error("")
+49. En el componente select vamos a captura el error con el catch y lo mostrarmos a la consola
+50. Mandamos un msj bonito al usuario.
+51 Creamos un nuevo componete Error para mostrar los errores class=error
+52. Si el error existe imprimirlo en el select
+---------------------DONE 44-52---------------------
+45. Hacer el catch para cuando vaya a realizar la peticion de un dog (parecido al de breeds)
+46. Capturar el error y mandar al usuario un msj mas descriptiovo usar el componente creado
+47. Ocultar el lodading si falla 
+48. Agregar a nimacion a card clase bounce
 
 
 

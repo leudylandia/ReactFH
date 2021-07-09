@@ -14,22 +14,26 @@ const initialDog = {
 function App() {
 
   const [dog, setdog] = useState(initialDog);
+  const [loading, setloading] = useState(false)
 
   useEffect(() => {
     updateDog();
   }, [])
   
-  const updateDog = () => {
-     getDog().then((response) => {
+  const updateDog = (breedId) => {
+    //console.log(breedId, 'App');
+    setloading(true);
+     getDog(breedId).then((response) => {
       setdog(response);
+      setloading(false);
      })
   }
 
   return (
     <div className="app">
        <h1>Practicando lo visto en el video</h1><br/>
-       <Select/>
-       <Card dog={dog}/>
+       <Select updateDog={updateDog}/>
+       <Card dog={dog} updateDog={updateDog} loading={loading}/>
     </div>
   );
 }
