@@ -1,0 +1,37 @@
+1. Crear el proyecto (net core ver la version MVC)
+2. Revisar statup en configureServices este (serivices.AddMvc())
+3. Agregamos un nuevo proyecto Class Library Model (.NET Core)
+4. Agregamos un nuevo proyecto Class Library Service(.NET Core)
+5. Agregamos referencia
+	Proy principal a ambos
+	Service a Model
+6. Agregamos EntityFramecore a Model (Microsoft.EntityFrameworkCore.Sqlserver) y Microsoft.EntityFrameworkCore.Tools para generar migraciones
+7. Creamos una clase que será el dbContext en Model appDbContext (importar lo demas : DbContext, Constructor)
+8. En Model creamos una carpeta para crear los modelos y agregar los modelos al dbContex
+9. Ahora vamos a inyectar la dependencia y nos vamos al Startup=>ConfigureServices(services.AdbContext<nombredbContext>(options => optios.UserSqlServer(Configuration.GetConnectionString("default")))
+10. Agregar nuestro conexion string "ConnectionStrings": {"Default": ""}
+*******************************************************************************
+
+Crear el formulario
+ViewModel para los formularios
+
+*******************************************************************************
+21. En service creamos nuestra interface public interface INameModel
+22. Creamos una clase y heredamos nuestra interfaces
+23. Iniciamos nuestra implementacion
+24. Registramos nuestra interface en el Startup=>ConfigureServices(service.AddTrasient<interface, servicioOclase()>)
+
+Recuerda que en el edit tengo que mandar todas las categorias tambien drodaownlist
+
+https://www.youtube.com/watch?v=WZoqkJm5O9o
+https://www.youtube.com/watch?v=l7TggHn90Fo
+https://www.youtube.com/watch?v=xFLipY2WEdM  @Html.ValidationSummary()
+https://www.youtube.com/watch?v=Usj0J4rUumI
+https://www.youtube.com/watch?v=91jxuRMI4T8
+https://www.youtube.com/watch?v=7CVQXK8YUt4
+https://www.youtube.com/watch?v=C5cnZ-gZy2I
+https://www.youtube.com/watch?v=C5cnZ-gZy2I   2h
+https://www.youtube.com/watch?v=JjLI-lU2dsw&list=PLty0cFLf07jUu-4p-l2Nnx2i5lP5XvdLN&index=5
+
+
+
