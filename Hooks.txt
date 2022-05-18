@@ -1,0 +1,59 @@
+useEffect: Es para ejecutar algo luego de haga el render, y podemos poner dependencia en el useEffect para que solo se ejecute cuando cambie ese estado y asi no se ejecute siempre. Pueden haber varios useEffect.
+
+Context (useContex): Nos permite pasar informacion a componentes sin necesidad de pasar props a cada nivel para usarla en u nivel especifico. Ejem Nivel0 => nivel1 => nivel2 => nivel3. Para usar alguna informacion(Ojeto, funciones,...) que está en el nivel 0 y usarla en el nivel 3 tendriamos que usar props y mandarla a cada nivel hasta llegar al nivel 3 (osea nivel 1,2,3). Con Context podemos obtener esa informacion sin tener que pasar props manualmente en cada nivel. {const data = useContext(NombreContext);} 
+
+memo: Memoriza un componente, Vuele a memorizar al cambiar las props. (usar cuando sea necesario solamente)
+
+useMemo: Memoriza un valor calculado, Para propiedades computadas, para procesos pesado. Devuelve un valor memorizado, solo volverá a calcular el valor memorizado cuando una de las dependencias haya cambiado. Esta optimización ayuda a evitar cálculos costosos en cada render.
+
+useCallback: Memoriza una funcion para no volver a definirla en cada render, Usarlo siempre que se pase una funcion como argunmento de un efecto, Usarlo siempre que se pase una funcion por props a un componente memorizado. Es parecido al useMemo, este recibe una funcion para memorizarla mas omenos por ahi es jsjs 
+
+useReducer: const [state, dispatch] = useReducer(reducer, initialState);
+
+useParams: Para obtener valores enviado por la url
+
+useLocation: Para obtener valores por query. ejem /categoria?name=lacteos
+
+useHistory: para navegar entres rutas
+
+
+
+⭐⭐ (Importante) Gist utilizado en el  proyecto
+https://gist.github.com/luismcabrera/...
+
+⭐ Repositorio de GitHub del proyectohttps://github.com/luismcabrera/Conte...
+
+⭐ Extensiones VSCode utilizadas- ES7 React/Redux/GraphQL/React-Native snippets- Prettier (Formatear código)
+
+🚀 Crear con React un Componente Contenedor para ventana Modal usando Props Children https://youtu.be/nE8UiSM44SY
+
+🚀 Custom Hooks - explicado al detalle con 3 ejemplos - Crea tus propios Hooks - React JS
+https://youtu.be/cBkl5jiHuXk
+
+🚀 React memo, useMemo y useCallback explicado al detalle - Con ejemplo práctico - Optimización
+https://youtu.be/maUZjMJ4bF4
+
+🚀 useRef explicado al detalle - Con 6 mini Apps - React - Scroll Animation Focus, Copy Paste y Más
+https://youtu.be/D2ElJVzriCk
+
+useReducer - explicado al detalle con 3 mini apps - init - types - actions - React Hooks
+https://www.youtube.com/watch?v=9cqiRXXbdW0
+
+React Router Dom Explicado al detalle - Autenticación, Parámetros, Querys, Routers anidados y más
+https://www.youtube.com/watch?v=oDQAzTJrbSI
+
+🚀 useEffect explicado al detalle - Con 3 mini Apps - React
+https://youtu.be/6lvI-gTF_X8
+
+🚀 useState explicado al detalle - Con 5 mini Apps - React
+https://youtu.be/kX70P85JnRE
+
+🚀 APP Perritos API y Manejo de errores
+https://youtu.be/pbAeTikKCmQ
+
+🚀 APP con Bracking Bad API
+https://youtu.be/lIbJEwbfxr0
+
+🚀  Primera APP con React 
+- Lista de tareas con LocalStorage y despligue a Netlify
+https://youtu.be/Bh7j2upPAT8
